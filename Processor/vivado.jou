@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:33:10 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Wed Oct 09 11:10:14 2024
+# Process ID: 14012
+# Log file: C:/Users/70139528/Downloads/Processor-20241009T060854Z-001/Processor/Processor/vivado.log
+# Journal file: C:/Users/70139528/Downloads/Processor-20241009T060854Z-001/Processor/Processor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:\Users\70139528\Downloads\Processor-20241009T060854Z-001\Processor\Processor\Processor.xpr}
+update_compile_order -fileset sim_1

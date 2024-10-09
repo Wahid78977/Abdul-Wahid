@@ -1,0 +1,61 @@
+
+*** Running vivado
+    with args -log RegisterFile.vds -m64 -mode batch -messageDb vivado.pb -source RegisterFile.tcl
+
+
+****** Vivado v2014.2 (64-bit)
+  **** SW Build 932637 on Wed Jun 11 13:33:10 MDT 2014
+  **** IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source RegisterFile.tcl
+# set_param gui.test TreeTableDev
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7a35tcpg236-1
+# set_property target_language Verilog [current_project]
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_property default_lib xil_defaultlib [current_project]
+# read_verilog -library xil_defaultlib C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v]
+# set_param synth.vivado.isSynthRun true
+# set_property webtalk.parent_dir C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.cache/wt [current_project]
+# set_property parent.project_dir C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor [current_project]
+# catch { write_hwdef -file RegisterFile.hwdef }
+INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
+# synth_design -top RegisterFile -part xc7a35tcpg236-1
+Command: synth_design -top RegisterFile -part xc7a35tcpg236-1
+
+Starting synthesis...
+
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+ERROR: [Synth 8-1031] x is not declared [C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v:16]
+ERROR: [Synth 8-1031] x is not declared [C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v:20]
+INFO: [Synth 8-2350] module RegisterFile ignored due to previous errors [C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v:1]
+Failed to read verilog 'C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v'
+    while executing
+"rt::read_verilog C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFile.v"
+    invoked from within
+"if {$rt::useElabCache == false} {
+      rt::read_verilog C:/Users/Elitebook/Desktop/code/FPGA/RISC_V/Processor/Processor.srcs/sources_1/new/RegisterFi..."
+    ("uplevel" body line 20)
+    invoked from within
+"uplevel #0 {
+    set ::env(BUILTIN_SYNTH) true
+    source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl
+    set rt::cmdEcho 0
+    rt::set_parameter writeXmsg t..."
+ERROR: [Common 17-39] 'source' failed due to earlier errors.
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+ERROR: [Common 17-39] 'source' failed due to earlier errors.
+
+    while executing
+"source -notrace {./.Xil/Vivado-13480-DESKTOP-D033VJB/realtime\RegisterFile.tcl}"
+    invoked from within
+"synth_design -top RegisterFile -part xc7a35tcpg236-1"
+    (file "RegisterFile.tcl" line 17)
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 29 15:03:43 2024...
