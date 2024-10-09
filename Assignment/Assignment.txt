@@ -1,0 +1,136 @@
+Assignment 1
+
+ADD:
+    0000000 000 000 00100 100001 0000011
+    rd rs1 rs2 opcode funct3 imm
+    (01CC0933) ADD
+
+SUB:
+    0100000 100 000 00100 100001 0000011
+    rd rs1 rs2 opcode funct3 imm
+    (41CC0933) SUB
+
+AND:
+    1100000 111 000 00100 100001 0000011
+    rd rs1 rs2 opcode funct3 imm
+    (01CC7933) AND
+
+ADDI:
+    0010011 000 000 00100 100001 10000001000
+    rd rs1 rs2 opcode funct3 imm
+    (01490813) ADDI
+
+ORI:
+    1000000 110 000 00100 100001 10000001000
+    rd rs1 rs2 opcode funct3 imm
+    (014C6913) ORI
+
+
+ SLLI (Shift Left Logical Immediate)
+
+
+0000000 000 000 00100 100001 0000011 rd rs1 rs2 opcode funct3 imm (01CC0933)
+
+
+Breakdown:
+
+
+- Opcode: 0000000 (RV32I opcode)
+- Funct3: 000 (SLLI)
+- Rd: 100001 (destination register)
+- Rs1: 000 (source register)
+- Rs2: 000 (unused)
+- Imm: 0000011 (shift amount)
+
+
+ SRAI (Shift Right Arithmetic Immediate)
+
+
+0100000 100 000 00100 100001 0000011 rd rs1 rs2 opcode funct3 imm (41CC0933)
+
+
+Breakdown:
+
+
+- Opcode: 0100000 (RV32I opcode)
+- Funct3: 100 (SRAI)
+- Rd: 100001 (destination register)
+- Rs1: 000 (source register)
+- Rs2: 000 (unused)
+- Imm: 0000011 (shift amount)
+
+
+ XORI (XOR Immediate)
+
+
+1100000 111 000 00100 100001 10000001000 rd rs1 rs2 opcode funct3 imm (01CC9933)
+
+
+Breakdown:
+
+
+- Opcode: 1100000 (RV32I opcode)
+- Funct3: 111 (XORI)
+- Rd: 100001 (destination register)
+- Rs1: 000 (source register)
+- Rs2: 000 (unused)
+- Imm: 10000001000 (immediate value)
+
+
+ SLTI (Set Less Than Immediate)
+
+
+0010011 000 000 00100 100001 10000001000 rd rs1 rs2 opcode funct3 imm (01490813)
+
+
+Breakdown:
+
+
+- Opcode: 0010011 (RV32I opcode)
+- Funct3: 000 (SLTI)
+- Rd: 100001 (destination register)
+- Rs1: 000 (source register)
+- Rs2: 000 (unused)
+- Imm: 10000001000 (immediate value)
+
+
+ LUI (Load Upper Immediate)
+
+
+0110111 000 000 00100 100001 00000000000 rd rs1 rs2 opcode funct3 imm (01C90833)
+
+
+Breakdown:
+
+
+- Opcode: 0110111 (RV32I opcode)
+- Funct3: 000 (LUI)
+- Rd: 100001 (destination register)
+- Rs1: 000 (unused)
+- Rs2: 000 (unused)
+- Imm: 00000000000 (upper 20 bits of address)
+///////////////////////////////////////////////////////////////////////////
+
+//////////////////Assignment2//////////////////////
+
+addi x1,x0,10
+addi x2,x0,0
+addi x3,x0,10
+
+loop:
+ addi x1,x1,1
+ addi x2,x2,1
+ 
+bne x2,x3,loop
+
+addi x4,x1,0
+
+/////////////////////simulation///////////
+
+0x0	0x00A00093	addi x1 x0 10	addi x1,x0,10
+0x4	0x00000113	addi x2 x0 0	addi x2,x0,0
+0x8	0x00A00193	addi x3 x0 10	addi x3,x0,10
+0xc	0x00108093	addi x1 x1 1	addi x1,x1,1
+0x10	0x00110113	addi x2 x2 1	addi x2,x2,1
+0x14	0xFE311CE3	bne x2 x3 -8	bne x2,x3,loop
+0x18	0x00008213	addi x4 x1 0	addi x4,x1,0
